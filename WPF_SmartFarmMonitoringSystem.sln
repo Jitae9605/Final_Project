@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_SmartFarmMonitoringSystem", "WPF_SmartFarmMonitoringSystem\WPF_SmartFarmMonitoringSystem.csproj", "{9D3A30F3-578A-4B2A-9127-F257B96F078D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D3A30F3-578A-4B2A-9127-F257B96F078D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D3A30F3-578A-4B2A-9127-F257B96F078D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D3A30F3-578A-4B2A-9127-F257B96F078D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D3A30F3-578A-4B2A-9127-F257B96F078D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {647E0674-8766-49E8-8CD6-65C38E2DF9B6}
+	EndGlobalSection
+EndGlobal
