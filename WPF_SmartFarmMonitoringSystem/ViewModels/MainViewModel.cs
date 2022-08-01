@@ -1,8 +1,12 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,8 +23,8 @@ namespace WPF_SmartFarmMonitoringSystem.ViewModels
 	{
 
 		private string inName;
-		public string InName 
-		{ 
+		public string InName
+		{
 			get => inName;
 			set
 			{
@@ -110,11 +114,45 @@ namespace WPF_SmartFarmMonitoringSystem.ViewModels
 				await Task.Run(() => OutName = person.Name);
 				await Task.Run(() => OutTel = person.Tel);
 				await Task.Run(() => OutMessage = person.Message);
+				Program();
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show($"예외발생 : {ex.Message}");
 			}
+		}
+
+
+		// 공공데이터포탈 초단기예보
+		public void Program()
+		{
+			HttpClient client = new HttpClient();
+
+			string url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst"; // URL
+			url += "?ServiceKey=" + "4YCQTPPRPGl%2BKP4xb5gVtRyCx%2BjzC7gpfKXt1k%2FHbp3sRxvB9K3P14K52GvE5XuouMRmGCgfZnRaVhQNR%2Bz9kg%3D%3D"; // Service Key
+			url += "&pageNo=1";
+			url += "&numOfRows=1000";
+			url += "&dataType=JSON";
+			url += "&base_date=20220801";
+			url += "&base_time=0000";
+			url += "&nx=55";
+			url += "&ny=127";
+
+			var request = (HttpWebRequest)WebRequest.Create(url);
+			request.Method = "GET";
+
+			string results = string.Empty;
+			HttpWebResponse response;
+			using (response = request.GetResponse() as HttpWebResponse)
+			{
+				StreamReader reader = new StreamReader(response.GetResponseStream());
+				results = reader.ReadToEnd();
+			}
+
+			
+
+
+			MessageBox.Show(results);
 		}
 	}
 }
