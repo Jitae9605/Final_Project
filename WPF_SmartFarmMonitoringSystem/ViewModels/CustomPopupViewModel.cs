@@ -1,7 +1,7 @@
 ﻿using Caliburn.Micro;
-using WpfSmartHomeMonitoringApp.Helpers;
+using WPF_SmartFarmMonitoringSystem.Helpers;
 
-namespace WpfSmartHomeMonitoringApp.ViewModels
+namespace WPF_SmartFarmMonitoringSystem.ViewModels
 {
 	public class CustomPopupViewModel : Conductor<object>
 	{

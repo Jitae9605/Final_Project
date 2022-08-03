@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace WpfSmartHomeMonitoringApp.Views
+namespace WPF_SmartFarmMonitoringSystem.Views
 {
 	/// <summary>
 	/// DataBaseView.xaml에 대한 상호 작용 논리

@@ -4,16 +4,32 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.IO;
+using System.Net;
+using System.Net.Http;
 using System.Text;
+using System.Windows;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
-using WpfSmartHomeMonitoringApp.Helpers;
-using WpfSmartHomeMonitoringApp.Models;
+using WPF_SmartFarmMonitoringSystem.Helpers;
+using WPF_SmartFarmMonitoringSystem.Models;
 
-namespace WpfSmartHomeMonitoringApp.ViewModels
+namespace WPF_SmartFarmMonitoringSystem.ViewModels
 {
 	public class DataBaseViewModel : Screen
 	{
+		private BindableCollection<WeatherModel> weatherModel;
+
+		public BindableCollection<WeatherModel> WeatherModel
+		{
+			get { return weatherModel; }
+			set
+			{
+				weatherModel = value;
+				NotifyOfPropertyChange(() => WeatherModel);
+			}
+		}
+
 		private string brokerUrl;
 		public string BrokerUrl
 		{
@@ -83,6 +99,33 @@ namespace WpfSmartHomeMonitoringApp.ViewModels
 				IsConnected = true;
 				ConnectDb();
 			}
+
+			HttpClient client = new HttpClient();
+
+			string url = "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst"; // URL
+			url += "?ServiceKey="
+					+ "4YCQTPPRPGl%2BKP4xb5gVtRyCx%2BjzC7gpfKXt1k%2FHbp3sRxvB9K3P14K52GvE5XuouMRmGCgfZnRaVhQNR%2Bz9kg%3D%3D"; // Service Key
+			url += "&pageNo=1";
+			url += "&numOfRows=1000";       // 한번에 검색할 페이지수
+			url += "&dataType=JSON";        // 출력 데이터 꼴(XML / JSON)
+			url += "&base_date=20220801";   // 기준날짜
+			url += "&base_time=0000";       // 기준시간
+			url += "&nx=55";                // x좌표
+			url += "&ny=127";               // y좌표
+
+			var request = (HttpWebRequest)WebRequest.Create(url);
+			request.Method = "GET";
+
+			string results = string.Empty;
+			HttpWebResponse response;
+			using (response = request.GetResponse() as HttpWebResponse)
+			{
+				StreamReader reader = new StreamReader(response.GetResponseStream());
+				results = reader.ReadToEnd();
+			}
+			MessageBox.Show(results);
+
+
 		}
 
 		/// <summary>

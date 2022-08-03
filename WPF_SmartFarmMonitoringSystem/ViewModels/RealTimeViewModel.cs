@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using uPLibrary.Networking.M2Mqtt;
 using uPLibrary.Networking.M2Mqtt.Messages;
-using WpfSmartHomeMonitoringApp.Helpers;
+using WPF_SmartFarmMonitoringSystem.Helpers;
 
-namespace WpfSmartHomeMonitoringApp.ViewModels
+namespace WPF_SmartFarmMonitoringSystem.ViewModels
 {
 	public class RealTimeViewModel : Screen
 	{

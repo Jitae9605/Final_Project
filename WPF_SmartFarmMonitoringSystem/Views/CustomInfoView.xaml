@@ -1,10 +1,10 @@
 ﻿<mah:MetroWindow 
-    x:Class="WpfSmartHomeMonitoringApp.Views.CustomInfoView"
+    x:Class="WPF_SmartFarmMonitoringSystem.Views.CustomInfoView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:local="clr-namespace:WpfSmartHomeMonitoringApp.Views"
+    xmlns:local="clr-namespace:WPF_SmartFarmMonitoringSystem.Views"
     xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
     mc:Ignorable="d"
     Title="CustomPopupView" Height="320" Width="500" Background="WhiteSmoke"

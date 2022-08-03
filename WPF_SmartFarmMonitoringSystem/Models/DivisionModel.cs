@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfSmartHomeMonitoringApp.Models
+namespace WPF_SmartFarmMonitoringSystem.Models
 {
 	public class DivisionModel
 	{

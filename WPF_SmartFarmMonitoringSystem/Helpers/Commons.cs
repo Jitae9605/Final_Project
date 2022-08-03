@@ -1,6 +1,6 @@
 ﻿using uPLibrary.Networking.M2Mqtt;
 
-namespace WpfSmartHomeMonitoringApp.Helpers
+namespace WPF_SmartFarmMonitoringSystem.Helpers
 {
 	public class Commons
 	{

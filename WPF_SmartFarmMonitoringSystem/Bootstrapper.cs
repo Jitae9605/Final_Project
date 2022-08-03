@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
-using WpfSmartHomeMonitoringApp.ViewModels;
+using WPF_SmartFarmMonitoringSystem.ViewModels;
 
-namespace WpfSmartHomeMonitoringApp
+namespace WPF_SmartFarmMonitoringSystem
 {
 	public class Bootstrapper : BootstrapperBase
 	{
@@ -51,7 +51,7 @@ namespace WpfSmartHomeMonitoringApp
 		protected override void OnStartup(object sender, StartupEventArgs e)
 		{
 			//base.OnStartup(sender, e);
-			DisplayRootViewFor<MainViewModel>();
+			DisplayRootViewForAsync<MainViewModel>();
 		}
 	}
 }

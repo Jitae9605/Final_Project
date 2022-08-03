@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WpfSmartHomeMonitoringApp.Models
+namespace WPF_SmartFarmMonitoringSystem.Models
 {
 	class SmartHomeModel
 	{

@@ -1,9 +1,9 @@
 ﻿using Caliburn.Micro;
 using System;
 using System.Reflection;
-using WpfSmartHomeMonitoringApp.Helpers;
+using WPF_SmartFarmMonitoringSystem.Helpers;
 
-namespace WpfSmartHomeMonitoringApp.ViewModels
+namespace WPF_SmartFarmMonitoringSystem.ViewModels
 {
 	public class CustomInfoViewModel : Conductor<object>
 	{
